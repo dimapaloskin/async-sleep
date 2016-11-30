@@ -42,7 +42,7 @@ const mock = {
 };
 
 sleep.reject(2000, mock)
-  .then(() => console.log('this message will never be shown')
+  .then(() => console.log('this message will never be shown'))
   .catch(console.log); // { error: 'Something went wrong...' }
 ```
 
