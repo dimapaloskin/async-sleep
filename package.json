@@ -1,0 +1,27 @@
+{
+  "name": "async-sleep",
+  "version": "0.0.1",
+  "description": "Sleep based on promise",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava -v"
+  },
+  "keywords": [
+    "sleep",
+    "promise",
+    "resolve",
+    "reject",
+    "wait"
+  ],
+  "author": "Dima Paloskin <dima@paloskin.me>",
+  "license": "MIT",
+  "dependencies": {
+    "native-or-bluebird": "^1.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
+}
