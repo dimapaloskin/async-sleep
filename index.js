@@ -1,6 +1,6 @@
 'use strict';
 
-var Promise = require('native-or-bluebird');
+var Promise = require('any-promise');
 
 function resolve(ms, response) {
   return new Promise(function(resolve) {
