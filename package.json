@@ -1,6 +1,6 @@
 {
   "name": "async-sleep",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Sleep based on promise",
   "main": "index.js",
   "files": [
