@@ -65,3 +65,37 @@ test('should resolve the sleep promise with defined response when sleep called d
     t.fail(e);
   }
 });
+
+test('should resolve the sleep promise with defined response and with random timeout', async (t) => {
+
+  const mock = {
+    message: 'Hello sleep'
+  };
+
+  const now = Date.now();
+  try {
+    const response = await sleep.randomResolve(100, 500, mock);
+    t.deepEqual(response, mock, 'Incorrect resolved response');
+    t.true((Date.now() - now) < 510, 'Timeout failed');
+    t.pass();
+  } catch (e) {
+    t.fail(e);
+  }
+});
+
+test('should reject the sleep promise with defined error and with random timeout', async (t) => {
+
+  const error = {
+    message: 'Bye sleep'
+  };
+
+  const now = Date.now();
+  try {
+    await sleep.randomReject(100, 500, error);
+    t.fail('promise was resolved, should be rejected');
+  } catch (e) {
+    t.deepEqual(e, error, 'Incorrect resjected response');
+    t.true((Date.now() - now) < 510, 'Timeout failed');
+    t.pass();
+  }
+});
