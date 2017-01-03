@@ -46,11 +46,37 @@ sleep.reject(2000, mock)
   .catch(console.log); // { error: 'Something went wrong...' }
 ```
 
+Use randomResolve method:
+```js
+import sleep from 'async-sleep';
+
+const mock = {
+  message: 'Hello world'
+};
+
+sleep.randomResolve(100, 1000, mock).then(console.log); // { message: 'Hello world' }
+```
+
+Use randomReject method:
+```js
+import sleep from 'async-sleep';
+
+const mock = {
+  error: 'Something went wrong...'
+};
+
+sleep.randomReject(100, 1000, mock)
+  .then(() => console.log('this message will never be shown'))
+  .catch(console.log); // { error: 'Something went wrong...' }
+```
+
 ## API
 
 #### sleep(ms, [result])
 #### sleep.resolve(ms, [result]);
 #### sleep.reject(ms, [error]);
+#### sleep.randomResolve(minMs, maxMs, [result]);
+#### sleep.randomReject(minMs, maxMs, [error]);
 
 ## Author
 
